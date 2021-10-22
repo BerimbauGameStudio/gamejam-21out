@@ -20,8 +20,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        MovimentaJogador();
         MovimentaMira();
+        MovimentaJogador();
         DesenhaLinhaParaMira();
         AtiraTorta();
     }
@@ -55,5 +55,6 @@ public class Player : MonoBehaviour
     {
         var movement = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         transform.position = transform.position + movement * speed * Time.deltaTime;
+        transform.right = (crosshair.position - transform.position).normalized;
     }
 }

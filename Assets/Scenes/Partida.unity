@@ -559,6 +559,10 @@ PrefabInstance:
       value: 0.12755652
       objectReference: {fileID: 0}
     - target: {fileID: 7798082753792487822, guid: 83b1dc06bcb7642a5aea722f34cd96f1, type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7798082753792487822, guid: 83b1dc06bcb7642a5aea722f34cd96f1, type: 3}
       propertyPath: crosshair
       value: 
       objectReference: {fileID: 852825623}
