@@ -3273,8 +3273,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   picadeiroController: {fileID: 6052775219232973702}
-  Player: {fileID: 400941515}
-  EspectadorPrefab: {fileID: 7604639209912440440, guid: 42451a0aded6748189230e88f4e32ef1, type: 3}
+  player: {fileID: 400941515}
+  espectadorPrefab: {fileID: 7604639209912440440, guid: 42451a0aded6748189230e88f4e32ef1, type: 3}
+  tempoUi: {fileID: 2018193501}
+  scoreUi: {fileID: 1358853470}
+  tempoParaVitoria: 60
   intervaloSpawnEspectador: 10
 --- !u!4 &1974448575
 Transform:
