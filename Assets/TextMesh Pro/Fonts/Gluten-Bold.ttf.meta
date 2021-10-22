@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2e5b80fb074a4cd43afe326bf4a10654
+guid: 906b2cf8f6ee93242a25bd902b73a106
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - KenVector Future Thin
+  - Gluten
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
