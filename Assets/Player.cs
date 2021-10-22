@@ -13,6 +13,9 @@ public class Player : MonoBehaviour
     private Vector3 movementPlayerVector;
     public Animator an;
 
+    public AudioSource audioSource;
+    public AudioClip pieThrowClip;
+
     private void Start()
     {
         Cursor.visible = false;
@@ -72,5 +75,6 @@ public class Player : MonoBehaviour
     private void ThrowAnimation()
     {
         an.SetTrigger("Throw");
+        audioSource.PlayOneShot(pieThrowClip);
     }
 }
