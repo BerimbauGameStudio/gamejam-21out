@@ -10,6 +10,9 @@ public class Player : MonoBehaviour
     private LineRenderer _lineRenderer;
     private float _ultimaTorta;
 
+    private Vector3 movementPlayerVector;
+    public Animator an;
+
     private void Start()
     {
         Cursor.visible = false;
@@ -24,6 +27,7 @@ public class Player : MonoBehaviour
         MovimentaJogador();
         DesenhaLinhaParaMira();
         AtiraTorta();
+        WalkAnimation();
     }
 
     private void AtiraTorta()
@@ -36,6 +40,8 @@ public class Player : MonoBehaviour
             torta.transform.position = transform.position;
             torta.transform.forward = (crosshair.position - transform.position).normalized;
             _ultimaTorta = Time.time;
+
+            ThrowAnimation();
         }
     }
 
@@ -53,8 +59,18 @@ public class Player : MonoBehaviour
 
     private void MovimentaJogador()
     {
-        var movement = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        transform.position = transform.position + movement * speed * Time.deltaTime;
+        movementPlayerVector = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        transform.position = transform.position + movementPlayerVector * speed * Time.deltaTime;
         transform.right = (crosshair.position - transform.position).normalized;
+    }
+
+    private void WalkAnimation()
+    {
+        an.SetFloat("Vel", Mathf.Abs(movementPlayerVector.magnitude));
+    }
+
+    private void ThrowAnimation()
+    {
+        an.SetTrigger("Throw");
     }
 }
