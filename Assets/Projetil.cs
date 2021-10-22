@@ -29,10 +29,12 @@ public class Projetil : MonoBehaviour
         if (other.tag == "Player")
         {
             other.GetComponent<Player>().Hit();
+            Destroy(gameObject);
         }
         if (other.tag == "Espectador")
         {
             other.GetComponent<Espectador>().Hit();
+            Destroy(gameObject);
         }
     }
 }
