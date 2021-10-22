@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6052775219407027166}
   - component: {fileID: 6052775219407027167}
+  - component: {fileID: 9115691021595062787}
   m_Layer: 0
   m_Name: Picadeiro
   m_TagString: Untagged
@@ -82,3 +83,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &9115691021595062787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6052775219407027164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0918cb0ffa6da4f798c0ac1d56d59859, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 15

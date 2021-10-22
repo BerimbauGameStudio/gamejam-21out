@@ -8,7 +8,7 @@ public class LevelController : MonoBehaviour
 
     public float intervaloSpawnEspectador = 10;
 
-    private float _lastEspectadorSpawned;
+    private float _lastEspectadorSpawned = -7;
 
     private void Update()
     {
