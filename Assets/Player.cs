@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
 
     private Vector3 movementPlayerVector;
     public Animator an;
+    private bool _dead;
 
     private void Start()
     {
@@ -23,6 +24,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (_dead) return;
+        
         MovimentaMira();
         MovimentaJogador();
         DesenhaLinhaParaMira();
@@ -72,5 +75,11 @@ public class Player : MonoBehaviour
     private void ThrowAnimation()
     {
         an.SetTrigger("Throw");
+    }
+
+    public void Hit()
+    {
+        FindObjectOfType<LevelController>().GameOver();
+        _dead = true;
     }
 }

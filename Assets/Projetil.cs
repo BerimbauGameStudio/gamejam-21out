@@ -23,4 +23,16 @@ public class Projetil : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            other.GetComponent<Player>().Hit();
+        }
+        if (other.tag == "Espectador")
+        {
+            other.GetComponent<Espectador>().Hit();
+        }
+    }
 }

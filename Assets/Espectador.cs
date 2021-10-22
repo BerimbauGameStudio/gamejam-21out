@@ -34,4 +34,10 @@ public class Espectador : MonoBehaviour
             _lastShootTime = Time.time;
         }
     }
+
+    public void Hit()
+    {
+        FindObjectOfType<LevelController>().OnEspectorHit();
+        Destroy(gameObject);
+    }
 }
