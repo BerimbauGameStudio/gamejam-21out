@@ -345,8 +345,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98802520917924f63a91d4fa4986c57f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 4
   crosshair: {fileID: 0}
+  tortaPrefab: {fileID: 0}
+  reloadTime: 0.4
 --- !u!95 &7520923904681194174
 Animator:
   serializedVersion: 3
@@ -417,7 +419,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.132
         inSlope: 0
         outSlope: 0
         tangentMode: 0
