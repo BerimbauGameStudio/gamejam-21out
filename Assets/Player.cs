@@ -14,6 +14,9 @@ public class Player : MonoBehaviour
     public Animator an;
     private bool _dead;
 
+    public AudioSource audioSource;
+    public AudioClip pieThrowClip;
+
     private void Start()
     {
         Cursor.visible = false;
@@ -75,6 +78,7 @@ public class Player : MonoBehaviour
     private void ThrowAnimation()
     {
         an.SetTrigger("Throw");
+        audioSource.PlayOneShot(pieThrowClip);
     }
 
     public void Hit()
