@@ -4,6 +4,7 @@ public class Player : MonoBehaviour
 {
     public float speed = 1;
     public Transform crosshair;
+    public GameObject tortaPrefab;
 
     private LineRenderer _lineRenderer;
     
@@ -19,6 +20,16 @@ public class Player : MonoBehaviour
     {
         MovimentaJogador();
         MovimentaMira();
+        DesenhaLinhaParaMira();
+        if (Input.GetMouseButtonDown(0))
+        {
+            var torta = Instantiate(tortaPrefab);
+            torta.transform.forward = (crosshair.position - transform.position).normalized;
+        }
+    }
+
+    private void DesenhaLinhaParaMira()
+    {
         _lineRenderer.SetPosition(0, transform.position);
         _lineRenderer.SetPosition(1, crosshair.transform.position);
     }
