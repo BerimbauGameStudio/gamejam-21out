@@ -5,26 +5,37 @@ public class Player : MonoBehaviour
     public float speed = 1;
     public Transform crosshair;
     public GameObject tortaPrefab;
+    public float reloadTime = 1;
 
     private LineRenderer _lineRenderer;
-    
+    private float _ultimaTorta;
+
     private void Start()
     {
         Cursor.visible = false;
 
         _lineRenderer = GetComponent<LineRenderer>();
+        _ultimaTorta = -reloadTime;
     }
 
-    // Update is called once per frame
     void Update()
     {
         MovimentaJogador();
         MovimentaMira();
         DesenhaLinhaParaMira();
+        AtiraTorta();
+    }
+
+    private void AtiraTorta()
+    {
+        if (Time.time - _ultimaTorta < reloadTime) return;
+
         if (Input.GetMouseButtonDown(0))
         {
             var torta = Instantiate(tortaPrefab);
+            torta.transform.position = transform.position;
             torta.transform.forward = (crosshair.position - transform.position).normalized;
+            _ultimaTorta = Time.time;
         }
     }
 
